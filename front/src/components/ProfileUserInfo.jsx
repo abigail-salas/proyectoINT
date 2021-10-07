@@ -88,7 +88,7 @@ const ProfileUserInfo = () => {
 
     return (
       axios
-        .put(`http://localhost:3001/api/users/update/${user.id}`, data)
+        .put(`/api/users/update/${user.id}`, data)
         //      .then((r) => r.data)
         .then((r) => {
           console.log("DATOS MODIFICADOS => NUEVO USUARIO: ====> ", r.data);

@@ -7,18 +7,25 @@ Property.init(
   {
     name: {
       type: S.STRING,
+      allowNull: false,
     },
     descripcion: {
       type: S.TEXT,
+      allowNull: false,
     },
     ubicacion: {
       type: S.STRING,
+      allowNull: false,
     },
     img: {
       type: S.STRING,
     },
     price: {
       type: S.INTEGER,
+      allowNull: false,
+    },
+    estado: {
+      type: S.STRING,
     },
     available: {
       type: S.BOOLEAN,

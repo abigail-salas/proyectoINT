@@ -10,6 +10,7 @@ import PrivateRoute from "../components/PrivateRoute";
 import Alquileres from "../components/Rentals";
 import Compras from "../components/Compras";
 import Ventas from "../components/Sales";
+import Carrucel from "../components/Carrucel";
 import axios from "axios";
 
 function App() {
@@ -41,8 +42,13 @@ function App() {
           <Route path="/alquileres">
             <Alquileres />
           </Route>
+
           <Route path="/compras">
             <Compras />
+          </Route>
+
+          <Route path="/carr">
+            <Carrucel />
           </Route>
 
           <Route exact path="/ran" component={ranceada} />

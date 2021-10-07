@@ -1,16 +1,65 @@
 import React from "react";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import Carrucel from "../components/Carrucel";
+import { Container } from "@material-ui/core";
 
-const Home = () => {
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    marginTop: 10,
+  },
+  media: {
+    height: 140,
+  },
+});
+
+export default function MediaCard() {
+  const classes = useStyles();
+  const theme = useTheme();
+
   return (
-    <div className="text:center">
-      <h2>BIENVENIDOS A MI INMOBILIARIA</h2>
-      <br />
-      <h4>
-        Acá se supone que tendrian que estar las propiedades, si hubieran
-        propiedades
-      </h4>
-    </div>
+    <>
+      <Carrucel />
+      <Container
+        component="main"
+        maxWidth="xs"
+        style={{
+          marginTop: theme.spacing(2),
+        }}
+      >
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0046-350x350.jpg"
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                1 dormitorio en suite con balcón a la calle y salida a terraza
+                interna, otros 2 dormitorio en suite (1 con salida a terraza
+                interna), 4to dormitorio muy grande, 5to dormitorio chico,
+                terraza interna, hall de distribución, baño grande completo,
+                salón de costura y altillo.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <FavoriteIcon />
+          </CardActions>
+        </Card>
+      </Container>
+    </>
   );
-};
-
-export default Home;
+}

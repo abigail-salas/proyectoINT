@@ -249,16 +249,18 @@ export default function PrimarySearchAppBar() {
             <MenuItem onClick={handleRentals}>Alquilar</MenuItem>
             <MenuItem onClick={handleClose}>Contacto</MenuItem>
           </Menu>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Button
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              style={{ color: "white" }}
-              onClick={handleHome}
-            >
-              Inmobiliaria
-            </Button>
-          </Typography>
+
+          <Button
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            style={{ color: "white" }}
+            onClick={handleHome}
+          >
+            <Typography className={classes.title} noWrap>
+              inmobiliaria
+            </Typography>
+          </Button>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
