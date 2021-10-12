@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 
 const images = [
   {
@@ -98,6 +99,22 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonBases() {
   const classes = useStyles();
+  const history = useHistory();
+
+  /*   const handle = (event) => {
+    if (image.title === "Casas") {
+      event.preventDefault();
+      history.push("/casas");
+    }
+    if (image.title === "Departamentos") {
+      event.preventDefault();
+      history.push("/departamentos");
+    }
+    if (image.title === "Terrenos") {
+      event.preventDefault();
+      history.push("/terrenos");
+    }
+  }; */
 
   return (
     <div className={classes.root}>
@@ -109,6 +126,20 @@ export default function ButtonBases() {
           focusVisibleClassName={classes.focusVisible}
           style={{
             width: image.width,
+          }}
+          onClick={(event) => {
+            if (image.title === "Casas") {
+              event.preventDefault();
+              history.push("/casas");
+            }
+            if (image.title === "Departamentos") {
+              event.preventDefault();
+              history.push("/departamentos");
+            }
+            if (image.title === "Terrenos") {
+              event.preventDefault();
+              history.push("/terrenos");
+            }
           }}
         >
           <span

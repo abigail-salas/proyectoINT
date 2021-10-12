@@ -9,11 +9,15 @@ Property.init(
       type: S.STRING,
       allowNull: false,
     },
-    descripcion: {
+    description: {
       type: S.TEXT,
       allowNull: false,
     },
-    ubicacion: {
+    location: {
+      type: S.STRING,
+      allowNull: false,
+    },
+    type: {
       type: S.STRING,
       allowNull: false,
     },
@@ -24,12 +28,16 @@ Property.init(
       type: S.INTEGER,
       allowNull: false,
     },
-    estado: {
+    state: {
       type: S.STRING,
+      allowNull: false,
     },
     available: {
       type: S.BOOLEAN,
       defaultValue: true,
+    },
+    coord: {
+      type: S.STRING,
     },
   },
 

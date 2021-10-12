@@ -1,9 +1,6 @@
 const express = require("express");
 const propertyRouter = express.Router();
 const Property = require("../models/PropertyModel");
-const Category = require("../models/CategoryModel");
-const { Op, fn, col } = require("sequelize");
-//require("../models/index");
 
 propertyRouter.get("/", (req, res, next) => {
   Property.findAll()

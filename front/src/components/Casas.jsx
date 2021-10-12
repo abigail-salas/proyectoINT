@@ -8,7 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import Carrucel from "../components/Carrucel";
+import Carrucel from "./Carrucel";
 import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -28,6 +28,7 @@ export default function MediaCard() {
   return (
     <>
       <Carrucel />
+
       <Container
         component="main"
         maxWidth="xs"
@@ -47,7 +48,7 @@ export default function MediaCard() {
                 Lizard
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                soy las compras
+                SOY LAS CASAS
               </Typography>
             </CardContent>
           </CardActionArea>

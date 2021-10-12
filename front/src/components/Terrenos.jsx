@@ -28,6 +28,7 @@ export default function MediaCard() {
   return (
     <>
       <Carrucel />
+
       <Container
         component="main"
         maxWidth="xs"
@@ -47,7 +48,7 @@ export default function MediaCard() {
                 Lizard
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                soy las compras
+                SOY LOS TERRRENOS
               </Typography>
             </CardContent>
           </CardActionArea>

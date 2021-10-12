@@ -1,0 +1,246 @@
+[
+  {
+    "name": "Casa 1",
+    "type": "Casa",
+    "state": "venta",
+    "price": "15.000",
+    "description": "PLANTA BAJA: recepción, escritorio, living, comedor, comedor diario, 2 baños completo, cocina con lavadero integrado, dependencia de servicio con baño, jardín, cochera. PLANTA ALTA: hall de distribución, sala de estar, baño completo, 5 dormitorios (3 grandes, 2 chicos, 1 con balcón a la calle, todos con placares), terraza. 273m2 construidos, 73m2 descubiertos 163m2 terreno. Apta para rubro comercial / vivienda particular / empresas.",
+    "location": " Vicente López y pasaje zorrilla",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0046-350x350.jpg"
+  },
+
+  {
+    "name": "Casa 2",
+    "type": "Casa",
+    "state": "venta",
+    "price": "15.0000",
+    "description": "PLANTA BAJA: 1 local comercial independiente, a la calle con baño.Zaguán pasillo de entrada, hall de entrada, patio interno, escritorio, escalera, baño completo, estar, living comedor, antecocina, cocina completa, patio interno, pasillo depósito, lavadero, baño deposito, escalera. PLANTA ALTA: 1 dormitorio en suite con balcón a la calle y salida a terraza interna, otros 2 dormitorio en suite (1 con salida a terraza interna), 4to dormitorio muy grande, 5to dormitorio chico, terraza interna, hall de distribución, baño grande completo, salón de costura y altillo.",
+    "location": "Paseo Güemes",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG_20210721_173810900-341x350.jpg"
+  },
+  {
+    "name": "Casa 3",
+    "type": "Casa",
+    "state": "venta",
+    "price": "20.000",
+    "description": "Espectacular casa en Valle Escondido con todas las comodidades y gran piscina!",
+    "location": "Valle Escondido",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210820-WA0142-350x350.jpg"
+  },
+  {
+    "name": "Casa 4",
+    "type": "Casa",
+    "state": "venta",
+    "price": "20.000",
+    "description": "Casa en calle Olavarría al 100, muy linda, completa, con muy buena distribución y muy cerca del centro!!",
+    "location": "calle Olavarria al 100",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210814-WA0014-350x350.jpg"
+  },
+  {
+    "name": "Casa 5",
+    "type": "Casa",
+    "state": "alquiler",
+    "price": "20.000",
+    "description": "Casa de campo",
+    "location": "Ciudad del milagro",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210811-WA0126-350x350.jpg"
+  },
+  {
+    "name": "Casa 6",
+    "type": "Casa",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Casa de campo",
+    "location": "Andes",
+    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+  },
+  {
+    "name": "Casa 7",
+    "type": "Casa",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Casa de campo",
+    "location": "Andes",
+    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+  },
+  {
+    "name": "Casa 8",
+    "type": "Casa",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Casa de campo",
+    "location": "Andes",
+    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+  },
+  {
+    "name": "Casa 9",
+    "type": "Casa",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Casa de campo",
+    "location": "Andes",
+    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+  },
+  {
+    "name": "Departamento 1",
+    "type": "Departamento",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 2",
+    "type": "Departamento",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 3",
+    "type": "Departamento",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 4",
+    "type": "Departamento",
+    "state": "alquiler",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 5",
+    "type": "Departamento",
+    "state": "venta",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 6",
+    "type": "Departamento",
+    "state": "venta",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 7",
+    "type": "Departamento",
+    "state": "venta",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 8",
+    "type": "Departamento",
+    "state": "venta",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Departamento 9",
+    "type": "Departamento",
+    "state": "venta",
+    "price": "68",
+    "description": "Departamento de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 1",
+    "type": "Casa",
+    "state": "venta",
+    "price": "68",
+    "description": "Casa de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 2",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 3",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 4",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 5",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 6",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 7",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 8",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  },
+  {
+    "name": "Terreno 9",
+    "type": "Terreno",
+    "state": "venta",
+    "price": "68",
+    "description": "Terreno de campo",
+    "location": "Dean Funes 1380",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+  }
+]

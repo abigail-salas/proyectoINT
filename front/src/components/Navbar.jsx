@@ -244,9 +244,9 @@ export default function PrimarySearchAppBar() {
             open={Boolean(nav)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleSales}>Vender</MenuItem>
             <MenuItem onClick={handleCompras}>Comprar</MenuItem>
             <MenuItem onClick={handleRentals}>Alquilar</MenuItem>
+            <MenuItem onClick={handleSales}>Vender</MenuItem>
             <MenuItem onClick={handleClose}>Contacto</MenuItem>
           </Menu>
 

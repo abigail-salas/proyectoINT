@@ -11,6 +11,9 @@ import Alquileres from "../components/Rentals";
 import Compras from "../components/Compras";
 import Ventas from "../components/Sales";
 import Carrucel from "../components/Carrucel";
+import Casas from "../components/Casas";
+import Departamentos from "../components/Departamentos";
+import Terrenos from "../components/Terrenos";
 import axios from "axios";
 
 function App() {
@@ -42,13 +45,17 @@ function App() {
           <Route path="/alquileres">
             <Alquileres />
           </Route>
-
           <Route path="/compras">
             <Compras />
           </Route>
-
-          <Route path="/carr">
-            <Carrucel />
+          <Route path="/casas">
+            <Casas />
+          </Route>
+          <Route path="/departamentos">
+            <Departamentos />
+          </Route>
+          <Route path="/terrenos">
+            <Terrenos />
           </Route>
 
           <Route exact path="/ran" component={ranceada} />
