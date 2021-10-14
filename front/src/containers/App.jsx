@@ -7,6 +7,7 @@ import Login from "./Login";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import PrivateRoute from "../components/PrivateRoute";
+import { ThemeProvider } from "@material-ui/core/styles";
 import Alquileres from "../components/Rentals";
 import Compras from "../components/Compras";
 import Ventas from "../components/Sales";
@@ -27,50 +28,52 @@ function App() {
   return (
     <div>
       <div className="h-full flex justify-center items-center">
-        <Navbar />
-        <Switch>
-          <Route exact path="/home" render={() => <Home />} />
+        <ThemeProvider>
+          <Navbar />
+          <Switch>
+            <Route exact path="/home" render={() => <Home />} />
 
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-          <PrivateRoute path="/profile">
-            <Profile />
-          </PrivateRoute>
+            <PrivateRoute path="/profile">
+              <Profile />
+            </PrivateRoute>
 
-          <Route path="/ventas">
-            <Ventas />
-          </Route>
-          <Route path="/alquileres">
-            <Alquileres />
-          </Route>
-          <Route path="/compras">
-            <Compras />
-          </Route>
+            <Route path="/ventas">
+              <Ventas />
+            </Route>
+            <Route path="/alquileres">
+              <Alquileres />
+            </Route>
+            <Route path="/compras">
+              <Compras />
+            </Route>
 
-          <Route path="/casas">
-            <Casas />
-          </Route>
-          <Route path="/departamentos">
-            <Departamentos />
-          </Route>
-          <Route path="/terrenos">
-            <Terrenos />
-          </Route>
+            <Route path="/casas">
+              <Casas />
+            </Route>
+            <Route path="/departamentos">
+              <Departamentos />
+            </Route>
+            <Route path="/terrenos">
+              <Terrenos />
+            </Route>
 
-          <Route
-            exact
-            path="/property/:id"
-            render={({ match }) => <SingleProductView id={match.params.id} />}
-          />
+            <Route
+              exact
+              path="/property/:id"
+              render={({ match }) => <SingleProductView id={match.params.id} />}
+            />
 
-          <Route exact path="/ran" component={ranceada} />
-          <Redirect from="/" to="/home" />
-        </Switch>
+            <Route exact path="/ran" component={ranceada} />
+            <Redirect from="/" to="/home" />
+          </Switch>
+        </ThemeProvider>
       </div>
     </div>
   );

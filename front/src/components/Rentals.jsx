@@ -1,60 +1,129 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
+
+import { grey, purple } from "@material-ui/core/colors";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Link as RouterLink, useHistory } from "react-router-dom";
+
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Container,
+  Link,
+} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import { getPropertyByState } from "../store/property";
+import Alert from "@material-ui/lab/Alert";
 import Carrucel from "../components/Carrucel";
-import { Container } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-    marginTop: 10,
-  },
-  media: {
-    height: 140,
-  },
-});
+import Snackbar from "@material-ui/core/Snackbar";
 
-export default function MediaCard() {
+const useStyles = makeStyles((theme) => ({
+  cardGrid: {
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardMedia: {
+    paddingTop: "100%",
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  mainGrid: {
+    marginTop: theme.spacing(3),
+  },
+  header: {
+    marginTop: theme.spacing(5),
+  },
+}));
+
+export default function Products() {
   const classes = useStyles();
+  const property = useSelector((state) => state.property);
+  console.log(property, "-----CASAAAAS");
+  const dispatch = useDispatch();
+  const history = useHistory();
   const theme = useTheme();
+  useEffect(() => {
+    dispatch(getPropertyByState("alquiler"));
+  }, []);
 
   return (
     <>
       <Carrucel />
       <Container
-        component="main"
-        maxWidth="xs"
-        style={{
-          marginTop: theme.spacing(2),
-        }}
+        className={classes.header}
+        style={{ marginLeft: theme.spacing(15) }}
       >
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image="https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0046-350x350.jpg"
-              title="Contemplative Reptile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                SOY LOS ALQUILERES
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <FavoriteIcon />
-          </CardActions>
-        </Card>
+        <Grid container spacing={5} className={classes.mainGrid}>
+          <Grid item xs={12} md={10}>
+            <Container className={classes.cardGrid}>
+              <Grid container spacing={4}>
+                {property.map((property) => (
+                  <Grid item key={property.id} xs={12} sm={6} md={4}>
+                    <Card className={classes.card}>
+                      <CardActionArea
+                        //href={`/property/${property.id}`}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          history.push(`/property/${property.id}`);
+                        }}
+                      >
+                        <CardMedia
+                          className={classes.cardMedia}
+                          image={property.img}
+                          title="Image title"
+                        />
+
+                        <CardContent className={classes.cardContent}>
+                          <Typography gutterBottom variant="h5" component="h2">
+                            {`${property.type} en ${property.location}`}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
+                          >
+                            {property.description}
+                          </Typography>
+                          <Typography>{`$${property.price}`}</Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <IconButton>
+                          <FavoriteIcon /* onClick={() => addFav(property.id)} */
+                          />
+
+                          {/*  <Snackbar
+                            open={favs}
+                            autoHideDuration={1500}
+                            onClose={handleCloseFavs}
+                          >
+                            <Alert severity="success" color="info">
+                              Se agregó a Favoritos!
+                            </Alert>
+                          </Snackbar> */}
+                        </IconButton>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
+          </Grid>
+        </Grid>
       </Container>
     </>
   );

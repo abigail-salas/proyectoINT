@@ -1,68 +1,68 @@
 const express = require("express");
-const favoriteRoute = express.Router();
+const favoritesRoute = express.Router();
 const Favorite = require("../models/FavoriteModel");
-const User = require("../models/UsersModel");
+// const Product = require("../models/ProductsModel");
+// const User = require("../models/UsersModel");
 
-/* favoriteRoute.get("/:id", async (req, res) => {
-  let cart = await Favorite.findOne({ where: { userId: req.params.id } });
-  if (!cart) cart = await Favorite.create({ userId: req.params.id });
-  res.status(200).send(cart);
-});
+require("../models/index");
 
-favoriteRoute.put("/:id/add", async (req, res) => {
-  console.log("entre mal");
-  // el producto ya debe tener la quantity seteada
-  const products = req.body;
-  let cart = await Favorite.findOne({ where: { userId: req.params.id } });
-  const userCart = cart.cart_items;
-  let change;
-
-  change = products.length
-    ? await Favorite.update(
-        { cart_items: [...userCart, ...products] },
-        { where: { id: cart.id }, returning: true }
-      )
-    : await Favorite.update(
-        { cart_items: [...userCart, products] },
-        { where: { id: cart.id }, returning: true }
-      );
-
-  res.status(200).send(change[1]);
-});
-
-favoriteRoute.put("/:id/put", async (req, res) => {
-  const { productId, quantity } = req.body;
-  const cart = await Favorite.findOne({ where: { userId: req.params.id } });
-  const change = cart.cart_items.map((item) => {
-    if (item.id === productId) item.quantity = quantity;
-    return item;
+// mostrar todos los favs de un usuario
+favoritesRoute.get("/:id", async (req, res) => {
+  const user = await Favorite.findOne({
+    where: { id: req.params.id },
   });
-
-  const update = await Favorite.update(
-    { cart_items: change },
-    { where: { id: cart.id }, returning: true, plain: true }
-  );
-  res.status(200).send(update[1]);
+  const products = await user.getProducts();
+  res.send(products);
 });
 
-favoriteRoute.delete("/:id/clear", (req, res) => {
-  Favorite.destroy({ where: { userId: req.params.id } }).then(() => {
-    Favorite.create({ where: { userId: req.params.id } });
-  });
+// agregar favorito a usuario
+favoritesRoute.post("/:id", (req, res) => {
+  // http://localhost:3001/api/favorites/11?productId=2   // 11 es id de usuario
+  const { productId } = req.query;
 
-  res.sendStatus(200);
+  Favorite.findOne({
+    where: {
+      id: productId,
+    },
+  })
+    .then((product) => {
+      console.log("PRODUCTO => ", product);
+      User.findOne({
+        where: { id: req.params.id },
+      }).then((user) => user.addProduct(product));
+    })
+    .then(() => res.sendStatus(200))
+    .catch(() => res.status(500).send("Already added"));
 });
 
-favoriteRoute.put("/:id/delete", async (req, res) => {
-  const { productId } = req.body;
-  const cart = await Favorite.findOne({ where: { userId: req.params.id } });
-  const change = cart.cart_items.filter((item) => item.id !== productId);
+// remover favorito
+favoritesRoute.delete("/:id", (req, res) => {
+  // http://localhost:3001/api/favorites/11?productId=2   // 11 es id de usuario
+  const { productId } = req.query;
 
-  const update = await Favorite.update(
-    { cart_items: change },
-    { where: { id: cart.id }, returning: true, plain: true }
-  );
-  res.status(200).send(update[1]);
-}); */
+  Favorite.findOne({
+    where: { id: req.params.id },
+  })
+    .then((user) => {
+      console.log("USUARIO ===> ", user);
+      user.removeProduct(productId);
+    })
+    .then(() => res.status(200).send(productId))
+    .catch(() => res.status(500).send("Already added"));
+});
 
-module.exports = favoriteRoute;
+// eliminar todos los favs de un usuario
+favoritesRoute.delete("/all/:id", (req, res) => {
+  Favorite.findOne({
+    where: { id: req.params.id },
+  })
+    .then((user) => {
+      user.getProducts().then((products) => {
+        user.removeProducts(products); // productos lista completa de productos
+      });
+    })
+    .then(() => res.status(200).send([]))
+    .catch(() => res.status(500).send("Error!"));
+});
+
+module.exports = favoritesRoute;

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 //import { useSelector, useDispatch } from "react-redux";
 //const user = useSelector((state) => state.user);
+import { grey, purple } from "@material-ui/core/colors";
 
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import {
@@ -94,6 +95,10 @@ const useStyles = makeStyles((theme) => ({
   },
   navButton: {
     color: "white",
+  },
+  color: {
+    color: theme.palette.getContrastText("#00695c"),
+    backgroundColor: "#00695c",
   },
 }));
 
@@ -226,7 +231,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.color}>
         <Toolbar>
           <IconButton
             edge="start"

@@ -10,7 +10,7 @@ propertyRouter.get("/", (req, res, next) => {
     .catch(next);
 });
 
-propertyRouter.get("/:type", (req, res, next) => {
+propertyRouter.get("/type/:type", (req, res, next) => {
   Property.findAll({ where: { type: req.params.type } })
     .then((products) => {
       res.send(products);
@@ -18,7 +18,7 @@ propertyRouter.get("/:type", (req, res, next) => {
     .catch(next);
 });
 
-propertyRouter.get("/:state", (req, res, next) => {
+propertyRouter.get("/state/:state", (req, res, next) => {
   console.log(req.params, "------ req.params en propperti");
   Property.findAll({ where: { state: req.params.state } })
     .then((products) => {
@@ -27,7 +27,7 @@ propertyRouter.get("/:state", (req, res, next) => {
     .catch(next);
 });
 
-propertyRouter.get("/:id", (req, res, next) => {
+propertyRouter.get("/id/:id", (req, res, next) => {
   Property.findOne({
     where: { id: req.params.id },
   })
