@@ -3,83 +3,118 @@
     "name": "Casa 1",
     "type": "Casa",
     "state": "venta",
-    "price": "15.000",
-    "description": "PLANTA BAJA: recepción, escritorio, living, comedor, comedor diario, 2 baños completo, cocina con lavadero integrado, dependencia de servicio con baño, jardín, cochera. PLANTA ALTA: hall de distribución, sala de estar, baño completo, 5 dormitorios (3 grandes, 2 chicos, 1 con balcón a la calle, todos con placares), terraza. 273m2 construidos, 73m2 descubiertos 163m2 terreno. Apta para rubro comercial / vivienda particular / empresas.",
-    "location": " Vicente López y pasaje zorrilla",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0046-350x350.jpg"
+    "price": "65.000 USD",
+    "description": "SUPERFICIE DE TERRENO 163 M2. SUPERFICIE CONSTRUIDA 273 M2. SUPERFICIE DESCUBIERTA 73 M2. TODOS LOS SERVICIOS",
+    "location": "Vicente López y pasaje Zorrilla",
+    "coord": {
+      "lat": -24.7877995838325,
+      "long": -65.4053707098568
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0051.jpg"
   },
-
   {
     "name": "Casa 2",
     "type": "Casa",
     "state": "venta",
-    "price": "15.0000",
-    "description": "PLANTA BAJA: 1 local comercial independiente, a la calle con baño.Zaguán pasillo de entrada, hall de entrada, patio interno, escritorio, escalera, baño completo, estar, living comedor, antecocina, cocina completa, patio interno, pasillo depósito, lavadero, baño deposito, escalera. PLANTA ALTA: 1 dormitorio en suite con balcón a la calle y salida a terraza interna, otros 2 dormitorio en suite (1 con salida a terraza interna), 4to dormitorio muy grande, 5to dormitorio chico, terraza interna, hall de distribución, baño grande completo, salón de costura y altillo.",
-    "location": "Paseo Güemes",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG_20210721_173810900-341x350.jpg"
+    "price": "65.000 USD",
+    "description": "SUPERFICIE DE TERRENO 430 M2. SUPERFICIE CONSTRUIDA 200 M2. 3 DORMITORIOS (1 SUITE). LIVING COMEDOR. LIVING. 2 BAÑOS COMPLETOS. 1 TOILLETE. COCHERA PARA DOS AUTOS. ESTAR. PARRILLA CON PÉRGOLA DE 4X7. PATIO. JACUZZI EXTERIOR PARA 4 PERSONAS",
+    "location": "B° Grand Bourg",
+    "coord": {
+      "lat": -24.774608877156815,
+      "long": -65.44505846880934
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/06/IMG-20210604-WA0014.jpg"
   },
   {
     "name": "Casa 3",
     "type": "Casa",
     "state": "venta",
-    "price": "20.000",
-    "description": "Espectacular casa en Valle Escondido con todas las comodidades y gran piscina!",
-    "location": "Valle Escondido",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210820-WA0142-350x350.jpg"
+    "price": "43.000 USD",
+    "description": "3 DORMITORIOS. 1 BAÑO. LIVING COMEDOR. COCINA COMPLETA. QUINCHO CON ASADOR. GARAGE. PATIO",
+    "location": "B° San Carlos",
+    "coord": {
+      "lat": -24.85295356927549,
+      "long": -65.44180449626192
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/06/IMG-20210531-WA0008.jpg"
   },
   {
     "name": "Casa 4",
     "type": "Casa",
     "state": "venta",
-    "price": "20.000",
-    "description": "Casa en calle Olavarría al 100, muy linda, completa, con muy buena distribución y muy cerca del centro!!",
+    "price": "40.000 USD",
+    "description": "SUPERFICIE DE TERRENO 200 M2. SUPERFICIE CONSTRUIDA 200 M2. AMPLIO LIVING. COCINA COMEDOR. ESTAR. DESPENSA. OFICINA CON BAÑO. PATIO INTERNO. 3 DORMITORIOS. 2 BAÑOS COMPLETOS (1 CON HIDROMASAJE). COCHERA. TENDER. QUINCHO CON ASADOR. JARDIN. DEPOSITO",
     "location": "calle Olavarria al 100",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210814-WA0014-350x350.jpg"
+    "coord": {
+      "lat": -24.797246534868012,
+      "long": -65.43249883478796
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210814-WA0026.jpg"
   },
   {
     "name": "Casa 5",
     "type": "Casa",
     "state": "alquiler",
     "price": "20.000",
-    "description": "Casa de campo",
-    "location": "Ciudad del milagro",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210811-WA0126-350x350.jpg"
+    "description": "2 BAÑOS. COCINA. PATIOS. DOBLE ENTRADA (POR MITRE Y POR ENTRE RÍOS). LAVADERO",
+    "location": "Mitre y Av. Entre Rios",
+    "coord": {
+      "lat": -24.78118767564467,
+      "long": -65.41020721764203
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/01/IMG-20200108-WA0073.jpg"
   },
   {
     "name": "Casa 6",
     "type": "Casa",
     "state": "alquiler",
-    "price": "68",
-    "description": "Casa de campo",
-    "location": "Andes",
-    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+    "price": "30.000",
+    "description": "SUPERFICIE DE TERRENO 200 M2. SUPERFICIE CONSTRUIDA 200 M2. AMPLIO LIVING. COCINA COMEDOR. ESTAR. DESPENSA. OFICINA CON BAÑO. PATIO INTERNO. 3 DORMITORIOS. 2 BAÑOS COMPLETOS (1 CON HIDROMASAJE). COCHERA. TENDER. QUINCHO CON ASADOR. JARDIN. DEPOSITO",
+    "location": "Alvarado al 500",
+    "coord": {
+      "lat": -24.790458874639093,
+      "long": -65.41868655399816
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/06/IMG_20180516_105228430.jpg"
   },
   {
     "name": "Casa 7",
     "type": "Casa",
     "state": "alquiler",
-    "price": "68",
-    "description": "Casa de campo",
-    "location": "Andes",
-    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+    "price": "45.000",
+    "description": "1 local comercial independiente, a la calle con baño. Zaguán pasillo de entrada, hall de entrada, patio interno, escritorio, escalera, baño completo, estar, living comedor, antecocina, cocina completa, patio interno, pasillo depósito, lavadero, baño deposito, escalera.",
+    "location": "Paseo Güemes",
+    "coord": {
+      "lat": -24.78675195956452,
+      "long": -65.4012596644179
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/08/IMG-20210821-WA0147.jpg"
   },
   {
     "name": "Casa 8",
     "type": "Casa",
     "state": "alquiler",
-    "price": "68",
-    "description": "Casa de campo",
-    "location": "Andes",
-    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+    "price": "36.000",
+    "description": "SUPERFICIE CUBIERTA 150 M2. LIVING COMEDOR. COCINA COMPLETA. 3 DORMITORIOS. 3 BAÑOS. BALCON. CALEFACCIÓN CENTRAL. COCHERA",
+    "location": "Alsina y Balcarce",
+    "coord": {
+      "lat": -24.77979500930772,
+      "long": -65.41145319991317
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/07/Screenshot_20200706-102512.png"
   },
   {
     "name": "Casa 9",
     "type": "Casa",
     "state": "alquiler",
-    "price": "68",
-    "description": "Casa de campo",
-    "location": "Andes",
-    "img": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/cerveza-andes-origen-rubia-473-siempreencasa_600x600.png?v=1629814628?nocache=0.6369898475256881"
+    "price": "49.000",
+    "description": "LIVING COMEDOR. COCINA INTEGRADA CON BARRA TIPO DESAYUNADOR. DORMITORIO. BAÑO COMPLETO. COCHERA. CALEFACCIÓN CENTRAL",
+    "location": "Rivadavia al 900",
+    "coord": {
+      "lat": -24.781864170447736,
+      "long": -65.41862681769217
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/05/IMG-20200526-WA0048-229x470.jpg"
   },
   {
     "name": "Departamento 1",
@@ -205,6 +240,10 @@
     "price": "40.000 USD",
     "description": "SUPERFICIE DE TERRENO 1573 M2. TODOS LOS SERVICIOS",
     "location": "San Lorenzo",
+    "coord": {
+      "lat": -24.732211482474472,
+      "long": -65.48845184367276
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/04/169482340_799335144345177_3799690100867872195_n.jpg"
   },
   {
@@ -214,6 +253,10 @@
     "price": "45.000 USD",
     "description": "SUPERFICIE DE TERRENO 1.800 M2. TODOS LOS SERVICIOS. SEGURIDAD LAS 24HS",
     "location": "San Lorenzo",
+    "coord": {
+      "lat": -24.731665777343185,
+      "long": -65.48956764255298
+    },
     "img": "https://www.ferretti.com.ar/wp-content/themes/ferretti/library/images/icono02.svg"
   },
   {
@@ -223,6 +266,10 @@
     "price": "45.000 USD",
     "description": "SUPERFICIE DE TERRENO 293 M2. TODOS LOS SERVICIOS.",
     "location": "Cerrillos",
+    "coord": {
+      "lat": -24.90454915499945,
+      "long": -65.49193965391919
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/02/IMG_20210120_152800896.jpg"
   },
   {
@@ -232,6 +279,10 @@
     "price": "56.000 USD",
     "description": "SUPERFICIE 4.772,50 M2. TODOS LOS SERVICIOS.",
     "location": "La Aguada",
+    "coord": {
+      "lat": -24.786397548203013,
+      "long": -65.5018825951008
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/07/IMG-20200702-WA0015.jpg"
   },
   {
@@ -241,6 +292,10 @@
     "price": "30.000 USD",
     "description": "SUPERFICIE DE TERRENO 531 M2. TODOS LOS SERVICIOS.",
     "location": "Los Nogales",
+    "coord": {
+      "lat": -25.110497289370194,
+      "long": -64.72809690859593
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/02/IMG-20181023-WA0009.jpg"
   },
   {
@@ -250,6 +305,10 @@
     "price": "35.000 USD",
     "description": "SUPERFICIE DE TERRENO 550 M2. TODOS LOS SERVICIOS.",
     "location": "San Luis",
+    "coord": {
+      "lat": -24.844620977109354,
+      "long": -65.51678382724306
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/05/IMG-20180510-WA0019.jpeg"
   },
   {
@@ -259,6 +318,10 @@
     "price": "52.000 USD",
     "description": "SUPERFICIE DE TERRENO 1074 M2. TODOS LOS SERVICIOS.",
     "location": "San Lorenzo",
+    "coord": {
+      "lat": -24.742891229475358,
+      "long": -65.48913848913752
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/07/IMG_20160128_102457025_HDR.jpg"
   },
   {
@@ -268,6 +331,10 @@
     "price": "68.000 USD",
     "description": "SUPERFICIE DE TERRENO 1574 M2. TODOS LOS SERVICIOS.",
     "location": "Cerrillos",
+    "coord": {
+      "lat": -24.91132186181607,
+      "long": -65.50292598135535
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2019/04/IMG-20190423-WA0019.jpg"
   },
   {
@@ -277,6 +344,10 @@
     "price": "54.000 USD",
     "description": "SUPERFICIE DE TERRENO 1584 M2. TODOS LOS SERVICIOS.",
     "location": "Los Molles",
+    "coord": {
+      "lat": -24.640511802532917,
+      "long": -65.38724858548115
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/07/IMG-20200608-WA0026.jpg"
   }
 ]
