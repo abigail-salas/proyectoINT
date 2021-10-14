@@ -7,7 +7,6 @@ Property.init(
   {
     name: {
       type: S.STRING,
-      allowNull: false,
     },
     description: {
       type: S.TEXT,
@@ -25,7 +24,7 @@ Property.init(
       type: S.STRING,
     },
     price: {
-      type: S.INTEGER,
+      type: S.STRING,
       allowNull: false,
     },
     state: {
@@ -37,7 +36,7 @@ Property.init(
       defaultValue: true,
     },
     coord: {
-      type: S.STRING,
+      type: S.JSON,
     },
   },
 

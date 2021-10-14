@@ -14,6 +14,7 @@ import Carrucel from "../components/Carrucel";
 import Casas from "../components/Casas";
 import Departamentos from "../components/Departamentos";
 import Terrenos from "../components/Terrenos";
+import SingleProductView from "../components/SingleProduct";
 import axios from "axios";
 
 function App() {
@@ -36,9 +37,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+
           <PrivateRoute path="/profile">
             <Profile />
           </PrivateRoute>
+
           <Route path="/ventas">
             <Ventas />
           </Route>
@@ -48,6 +51,7 @@ function App() {
           <Route path="/compras">
             <Compras />
           </Route>
+
           <Route path="/casas">
             <Casas />
           </Route>
@@ -57,6 +61,12 @@ function App() {
           <Route path="/terrenos">
             <Terrenos />
           </Route>
+
+          <Route
+            exact
+            path="/property/:id"
+            render={({ match }) => <SingleProductView id={match.params.id} />}
+          />
 
           <Route exact path="/ran" component={ranceada} />
           <Redirect from="/" to="/home" />

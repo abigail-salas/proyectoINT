@@ -10,6 +10,34 @@ propertyRouter.get("/", (req, res, next) => {
     .catch(next);
 });
 
+propertyRouter.get("/:type", (req, res, next) => {
+  Property.findAll({ where: { type: req.params.type } })
+    .then((products) => {
+      res.send(products);
+    })
+    .catch(next);
+});
+
+propertyRouter.get("/:state", (req, res, next) => {
+  console.log(req.params, "------ req.params en propperti");
+  Property.findAll({ where: { state: req.params.state } })
+    .then((products) => {
+      res.send(products);
+    })
+    .catch(next);
+});
+
+propertyRouter.get("/:id", (req, res, next) => {
+  Property.findOne({
+    where: { id: req.params.id },
+  })
+    .then((product) => {
+      if (!product) res.status(404);
+      res.send(product);
+    })
+    .catch(next);
+});
+
 propertyRouter.post("/", async (req, res, next) => {
   console.log(req.body, "------ req.body en propperti");
   const casaCreada = await Property.create(req.body);

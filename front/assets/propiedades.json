@@ -85,82 +85,118 @@
     "name": "Departamento 1",
     "type": "Departamento",
     "state": "alquiler",
-    "price": "68",
-    "description": "Departamento de campo",
+    "price": "28.000",
+    "description": "SUPERFICIE TOTAL 29 M2. BAÑO COMPLETO. COCINA CON BAJO MESADA Y ALACENA. DESAYUNADOR. PLACARD. BALCÓN",
     "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "coord": {
+      "lat": -24.772778460141524,
+      "long": -65.40650673743002
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091.jpg"
   },
   {
     "name": "Departamento 2",
     "type": "Departamento",
     "state": "alquiler",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "33.000",
+    "description": "SUPERFICIE 91,50 M2. LIVING COMEDOR. COCINA COMPLETA. 4 DORMITORIOS. 2 BAÑOS COMPLETOS. LAVADERO. COCHERA. ASCENSOR. HALL DE INGRESO",
+    "location": "Gral. Güemes al 2200",
+    "coord": {
+      "lat": -24.78431846614442,
+      "long": -65.4334783686049
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210712-WA0115.jpg"
   },
   {
     "name": "Departamento 3",
     "type": "Departamento",
     "state": "alquiler",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "30.000",
+    "description": "SUPERFICIE DPTO 1 DORM: 55M2. SUPERFICIES DPTOS 2 DORM: DE 60 A 90 M2. MUEBLES DE COCINA. AIRE ACONDICIONADO FRIO/CALOR. COCINAS Y TERMOTANQUES ELECTRICOS",
+    "location": "Necochea al 1300",
+    "coord": {
+      "lat": -24.77769137156328,
+      "long": -65.41945500674693
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2016/06/IMG_20160622_162552150-353x470.jpg"
   },
   {
     "name": "Departamento 4",
     "type": "Departamento",
     "state": "alquiler",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "35.000",
+    "description": "2 DORMITORIOS CON PLACARES E INTERIORES. LIVING COMEDOR. BAÑO COMPLETO. TOILLETE. COCINA CON LAVADERO INTEGRADO. BALCON A LA CALLE. COCHERA. CALEFACCIÓN CENTRAL POR LOSA RADIANTE",
+    "location": "Alvear 355",
+    "coord": {
+      "lat": -24.784654747558456,
+      "long": -65.41905050674693
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/02/IMG-20210201-WA0041.jpg"
   },
   {
     "name": "Departamento 5",
     "type": "Departamento",
     "state": "venta",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "20.000 USD",
+    "description": "SUPERFICIE SIN COCHERA 36 M2. LIVING COMEDOR. COCINA INTEGRADA CON BAJO MESADA, ALACENA Y EXTRACTOR. DORMITORIO CON PLACARD Y BALCÓN (CON ESPACIO PARA LAVARROPAS). BAÑO. CALEFACCIÓN CENTRAL. COCHERA",
+    "location": "Pueyrredón al 1300",
+    "coord": {
+      "lat": -24.773766571052658,
+      "long": -65.4052638644177
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/11/Screenshot_20201111-1544062-241x470.png"
   },
   {
     "name": "Departamento 6",
     "type": "Departamento",
     "state": "venta",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "17.000 USD",
+    "description": "SUPERFICIE CUBIERTA 87,93 M2. SUPERFICIE BALCÓN 8,25 M2. SUPERFICIE TOTAL 96,18 M2. LIVING COMEDOR. COCINA COMPLETA CON LAVADERO INTEGRADO. BALCON A LA CALLE. 3 DORM (1 SUITE). BAÑOS (1 TOILLETE). CALEFACCIÓN CENTRAL",
+    "location": "Adolfo Güemes 367",
+    "coord": {
+      "lat": -24.78477261005956,
+      "long": -65.4177045644177
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/08/IMG_20200806_1542594892-353x470.jpg"
   },
   {
     "name": "Departamento 7",
     "type": "Departamento",
     "state": "venta",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "34.000 USD",
+    "description": "SUPERFICIE CUBIERTA 51,19 M2. SUPERFICIE DE BALCÓN 3,12 M2. SUPERFICIE DE TERRAZAS 70,28 M2. SUPERFICIE TOTAL 124,59 M2. LIVING COMEDOR. COCINA COMPLETA. DORMITORIO. BAÑO. BALCON. DOBLE TERRAZA. LAVADERO. CALEFACCIÓN CENTRAL",
+    "location": "Av. Belgrano al 1500",
+    "coord": {
+      "lat": -24.78639157176935,
+      "long": -65.42311676441768
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/08/IMG_20200806_170802168.jpg"
   },
   {
     "name": "Departamento 8",
     "type": "Departamento",
     "state": "venta",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
+    "price": "45.000 USD",
+    "description": "SUPERFICIE DEPARTAMENTO 125 M2. SUPERFICIE DE COCHERA 11,05 M2. SUPERFICIE TOTAL 135 M2. LUMINOSO LIVING COMEDOR. AMPLIA COCINA COMEDOR. 3 DORMITORIOS (1 EN SUITE). 2 BAÑOS. DEPENDENCIA DE SERVICIOS CON ENTRADA INDEPENDIENTE. LAVADERO CON TENDER. COCHERA. CALEFACCIÓN CENTRAL. EXCELENTE ESTADO DE CONSERVACIÓN",
+    "location": "Alvarado y Catamarca",
+    "coord": {
+      "lat": -24.791068237509354,
+      "long": -65.4056955355823
+    },
     "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
   },
   {
     "name": "Departamento 9",
     "type": "Departamento",
     "state": "venta",
-    "price": "68",
-    "description": "Departamento de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "32.000 USD",
+    "description": "LIVING COMEDOR. COCINA INTEGRADA CON BAJO MESADA Y DESAYUNADOR. 2 HABITACIONES (1 CON LAVATORIO Y VESTIDOR). BAÑO COMPLETO. COCHERA",
+    "location": "Mitre y Arenales",
+    "coord": {
+      "lat": -24.77090938324276,
+      "long": -65.40910889140537
+    },
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/06/IMG-20200629-WA0073.jpg"
   },
   {
     "name": "Terreno 1",

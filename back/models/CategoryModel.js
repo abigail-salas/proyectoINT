@@ -4,11 +4,11 @@ const db = require("../config/db");
 class Category extends S.Model {}
 Category.init(
   {
-    /* category_id: {
+    category_id: {
       type: S.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    }, */
+    },
     category_name: {
       type: S.STRING,
       allowNull: false,

@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import Carrucel from "../components/Carrucel";
 import { Container } from "@material-ui/core";
-import jj from "../../assets/propiedades.json";
+//import jj from "../../assets/propiedades.json";
 import axios from "axios";
 
 const useStyles = makeStyles({
@@ -40,14 +40,14 @@ export default function MediaCard() {
       .catch((e) => console.log(e, "--error en property"));
   }; */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     axios
       .get("../../assets/propiedades.json")
       .then((res) => {
         console.log(res, "------res en property");
       })
       .catch((e) => console.log(e, "--error en property"));
-  }, []);
+  }, []); */
 
   const propi = () => {
     console.log(property, "-------LA PROPERTYYY");

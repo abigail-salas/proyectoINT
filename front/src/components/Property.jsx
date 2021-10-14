@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-//import { addToLocalCart } from "../store/cart";
-//import { addFavorite } from "../store/favorites";
+import { addToLocalCart } from "../store/cart";
+import { addFavorite } from "../store/favorites";
 
 import {
   Card,
@@ -38,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Property() {
+export default function Products() {
   const classes = useStyles();
-  const property = useSelector((state) => state.property);
+  const products = useSelector((state) => state.products);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -82,12 +82,12 @@ export default function Property() {
   };
   ////
 
-  /*   const handleClick = (product) => {
+  const handleClick = (product) => {
     dispatch(addToLocalCart(product));
     handleOpenCarrito();
-  }; */
+  };
 
-  /*   const addFav = (productId) => {
+  const addFav = (productId) => {
     if (!user.id) {
       setMessageInfo(
         "Debes estar logueado! \nPor favor, accede a tu cuenta..."
@@ -96,60 +96,82 @@ export default function Property() {
       dispatch(addFavorite({ userId: user.id, productId: productId }));
       handleOpenFavs();
     }
-  }; */
+  };
 
   return (
     <Grid item xs={12} md={10}>
+     {/*  {messageInfo ? (
+        <Snackbar
+          open={state.open}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          className={classes.snackbar}
+        >
+          <Alert severity="error" onClose={handleClose}>
+            <div
+              style={{
+                display: "flex",
+                flexFlow: "column",
+                alignItems: "center",
+              }}
+            >
+              {messageInfo}
+            </div>
+          </Alert>
+        </Snackbar>
+      ) : null} */}
+
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <Link href={`/products/1`}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://www.ferretti.com.ar/wp-content/uploads/2021/09/IMG-20210914-WA0046-350x350.jpg"
-                  title="Image title"
-                />
-              </Link>
-              <CardContent className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Casa
-                </Typography>
-                <Typography>15.000</Typography>
-              </CardContent>
-              <CardActions>
-                <IconButton
-                  color="primary"
-                  //onClick={() => handleClick(product)}
-                >
-                  <AddShoppingCartIcon />
-
-                  <Snackbar
-                    open={carrito}
-                    autoHideDuration={1500}
-                    onClose={handleCloseCarrito}
+          {products.map((product) => (
+            <Grid item key={product.id} xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <Link href={`/products/${product.id}`}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={product.img}
+                    title="Image title"
+                  />
+                </Link>
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {product.name}
+                  </Typography>
+                  <Typography>{`$${product.price}`}</Typography>
+                </CardContent>
+                <CardActions>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleClick(product)}
                   >
-                    <Alert severity="success" color="info">
-                      Se agregó al Carrito!
-                    </Alert>
-                  </Snackbar>
-                </IconButton>
-                <IconButton color="primary">
-                  <FavoriteIcon /* onClick={() => addFav(product.id)} */ />
+                    <AddShoppingCartIcon />
 
-                  <Snackbar
-                    open={favs}
-                    autoHideDuration={1500}
-                    onClose={handleCloseFavs}
-                  >
-                    <Alert severity="success" color="info">
-                      Se agregó a Favoritos!
-                    </Alert>
-                  </Snackbar>
-                </IconButton>
-              </CardActions>
-            </Card>
-          </Grid>
+                    <Snackbar
+                      open={carrito}
+                      autoHideDuration={1500}
+                      onClose={handleCloseCarrito}
+                    >
+                      <Alert severity="success" color="info">
+                        Se agregó al Carrito!
+                      </Alert>
+                    </Snackbar>
+                  </IconButton>
+                  <IconButton color="primary">
+                    <FavoriteIcon onClick={() => addFav(product.id)} />
+
+                    <Snackbar
+                      open={favs}
+                      autoHideDuration={1500}
+                      onClose={handleCloseFavs}
+                    >
+                      <Alert severity="success" color="info">
+                        Se agregó a Favoritos!
+                      </Alert>
+                    </Snackbar>
+                  </IconButton>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Grid>
