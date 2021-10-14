@@ -200,83 +200,83 @@
   },
   {
     "name": "Terreno 1",
-    "type": "Casa",
+    "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Casa de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "40.000 USD",
+    "description": "SUPERFICIE DE TERRENO 1573 M2. TODOS LOS SERVICIOS",
+    "location": "San Lorenzo",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/04/169482340_799335144345177_3799690100867872195_n.jpg"
   },
   {
     "name": "Terreno 2",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "45.000 USD",
+    "description": "SUPERFICIE DE TERRENO 1.800 M2. TODOS LOS SERVICIOS. SEGURIDAD LAS 24HS",
+    "location": "San Lorenzo",
+    "img": "https://www.ferretti.com.ar/wp-content/themes/ferretti/library/images/icono02.svg"
   },
   {
     "name": "Terreno 3",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "45.000 USD",
+    "description": "SUPERFICIE DE TERRENO 293 M2. TODOS LOS SERVICIOS.",
+    "location": "Cerrillos",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/02/IMG_20210120_152800896.jpg"
   },
   {
     "name": "Terreno 4",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "56.000 USD",
+    "description": "SUPERFICIE 4.772,50 M2. TODOS LOS SERVICIOS.",
+    "location": "La Aguada",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/07/IMG-20200702-WA0015.jpg"
   },
   {
     "name": "Terreno 5",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "30.000 USD",
+    "description": "SUPERFICIE DE TERRENO 531 M2. TODOS LOS SERVICIOS.",
+    "location": "Los Nogales",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/02/IMG-20181023-WA0009.jpg"
   },
   {
     "name": "Terreno 6",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "35.000 USD",
+    "description": "SUPERFICIE DE TERRENO 550 M2. TODOS LOS SERVICIOS.",
+    "location": "San Luis",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/05/IMG-20180510-WA0019.jpeg"
   },
   {
     "name": "Terreno 7",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "52.000 USD",
+    "description": "SUPERFICIE DE TERRENO 1074 M2. TODOS LOS SERVICIOS.",
+    "location": "San Lorenzo",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2018/07/IMG_20160128_102457025_HDR.jpg"
   },
   {
     "name": "Terreno 8",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "68.000 USD",
+    "description": "SUPERFICIE DE TERRENO 1574 M2. TODOS LOS SERVICIOS.",
+    "location": "Cerrillos",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2019/04/IMG-20190423-WA0019.jpg"
   },
   {
     "name": "Terreno 9",
     "type": "Terreno",
     "state": "venta",
-    "price": "68",
-    "description": "Terreno de campo",
-    "location": "Dean Funes 1380",
-    "img": "https://www.ferretti.com.ar/wp-content/uploads/2021/07/IMG-20210728-WA0091-350x350.jpg"
+    "price": "54.000 USD",
+    "description": "SUPERFICIE DE TERRENO 1584 M2. TODOS LOS SERVICIOS.",
+    "location": "Los Molles",
+    "img": "https://www.ferretti.com.ar/wp-content/uploads/2020/07/IMG-20200608-WA0026.jpg"
   }
 ]
