@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-
+import { addFavorite } from "../store/favorite";
 import { grey, purple } from "@material-ui/core/colors";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -54,12 +54,14 @@ export default function Products() {
   console.log(property, "-----CASAAAAS");
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector((state) => state.user);
+
   const theme = useTheme();
   useEffect(() => {
     dispatch(getPropertyByType("Terreno"));
   }, []);
 
-  /*   //Alert a favs
+  //Alert a favs
   const [favs, setFavs] = useState(false);
   const handleOpenFavs = () => {
     setFavs(true);
@@ -72,21 +74,10 @@ export default function Products() {
   };
   ////
 
-    const handleClick = (product) => {
-    dispatch(addToLocalCart(product));
-    handleOpenCarrito();
-  };
-
   const addFav = (productId) => {
-    if (!user.id) {
-      setMessageInfo(
-        "Debes estar logueado! \nPor favor, accede a tu cuenta..."
-      );
-    } else {
-      dispatch(addFavorite({ userId: user.id, productId: productId }));
-      handleOpenFavs();
-    }
-  }; */
+    dispatch(addFavorite({ userId: user.id, productId: productId }));
+    handleOpenFavs();
+  };
 
   return (
     <>
@@ -99,55 +90,59 @@ export default function Products() {
           <Grid item xs={12} md={10}>
             <Container className={classes.cardGrid}>
               <Grid container spacing={4}>
-                {property.map((property) => (
-                  <Grid item key={property.id} xs={12} sm={6} md={4}>
-                    <Card className={classes.card}>
-                      <CardActionArea
-                        //href={`/property/${property.id}`}
-                        onClick={(event) => {
-                          event.preventDefault();
-                          history.push(`/property/${property.id}`);
-                        }}
-                      >
-                        <CardMedia
-                          className={classes.cardMedia}
-                          image={property.img}
-                          title="Image title"
-                        />
-
-                        <CardContent className={classes.cardContent}>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {`${property.type} en ${property.location}`}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                          >
-                            {property.description}
-                          </Typography>
-                          <Typography>{`$${property.price}`}</Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <IconButton>
-                          <FavoriteIcon /* onClick={() => addFav(property.id)} */
+                {Array.isArray(property) &&
+                  property.map((property) => (
+                    <Grid item key={property.id} xs={12} sm={6} md={4}>
+                      <Card className={classes.card}>
+                        <CardActionArea
+                          //href={`/property/${property.id}`}
+                          onClick={(event) => {
+                            event.preventDefault();
+                            history.push(`/property/${property.id}`);
+                          }}
+                        >
+                          <CardMedia
+                            className={classes.cardMedia}
+                            image={property.img}
+                            title="Image title"
                           />
 
-                          {/*  <Snackbar
-                            open={favs}
-                            autoHideDuration={1500}
-                            onClose={handleCloseFavs}
-                          >
-                            <Alert severity="success" color="info">
-                              Se agregó a Favoritos!
-                            </Alert>
-                          </Snackbar> */}
-                        </IconButton>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                ))}
+                          <CardContent className={classes.cardContent}>
+                            <Typography
+                              gutterBottom
+                              variant="h5"
+                              component="h2"
+                            >
+                              {`${property.type} en ${property.location} (${property.state})`}
+                            </Typography>
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
+                              component="p"
+                            >
+                              {property.description.substring(0, 20) + "..."}
+                            </Typography>
+                            <Typography>{`$${property.price}`}</Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                          <IconButton>
+                            <FavoriteIcon onClick={() => addFav(property.id)} />
+
+                            <Snackbar
+                              open={favs}
+                              autoHideDuration={1500}
+                              onClose={handleCloseFavs}
+                            >
+                              <Alert severity="success" color="info">
+                                Se agregó a Favoritos!
+                              </Alert>
+                            </Snackbar>
+                          </IconButton>
+                        </CardActions>
+                      </Card>
+                    </Grid>
+                  ))}
               </Grid>
             </Container>
           </Grid>

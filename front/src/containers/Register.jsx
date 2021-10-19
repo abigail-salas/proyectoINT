@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     margin: theme.spacing(1),
   },
+  color: {
+    color: theme.palette.getContrastText("#00695c"),
+    backgroundColor: "#00695c",
+  },
 }));
 
 const Register = () => {
@@ -230,8 +234,8 @@ const Register = () => {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               // disabled={!form.isValid}
+              className={classes.color}
             >
               Registrarse
             </Button>

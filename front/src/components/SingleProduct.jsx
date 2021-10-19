@@ -4,6 +4,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { getSelectedProperty } from "../store/property";
 //import { addToLocalCart } from "../store/cart";
 //import { addFavorite } from "../store/favorites";
+import React from "react";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import ListItemText from "@material-ui/core/ListItemText";
+import CheckIcon from "@material-ui/icons/Check";
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+} from "react-google-maps";
 import {
   Grid,
   IconButton,
@@ -11,9 +25,12 @@ import {
   Paper,
   Typography,
   Box,
+  Tab,
+  Tabs,
   InputLabel,
   MenuItem,
   FormControl,
+  AppBar,
   Select,
   Breadcrumbs,
   Link,
@@ -24,6 +41,10 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
+import HomeIcon from "@material-ui/icons/Home";
+import HouseIcon from "@material-ui/icons/House";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 
 const useStyles = makeStyles((theme) => ({
   grey: {
@@ -67,13 +88,27 @@ const useStyles = makeStyles((theme) => ({
     heigth: "100%",
     marginRight: theme.spacing(10),
   },
+  pad: {
+    display: "flex",
+    padding: theme.spacing(5),
+    // marginTop: theme.spacing(5),
+    // marginBottom: theme.spacing(5),
+    marginRight: theme.spacing(10),
+    marginLeft: theme.spacing(10),
+  },
+  tab: {
+    display: "flex",
+    width: "100%",
+    heigth: "100%",
+  },
 }));
 
 const SingleProductView = ({ id }) => {
   const property = useSelector((state) => state.property);
+  console.log(property, "<<<<<<<<<<<PROPEEERTIIIII");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-
+  const [dense, setDense] = useState(false);
   useEffect(() => {
     dispatch(getSelectedProperty(id));
   }, []);
@@ -81,6 +116,31 @@ const SingleProductView = ({ id }) => {
   const classes = useStyles();
   const theme = useTheme();
   const history = useHistory();
+
+  const pp = () => {
+    let des = property.description;
+    console.log(des, ">>>>>>>>>>>LA DEEES");
+    let laSplit = des.split(".");
+    console.log(laSplit, ">>>>>>>>>>>SPLIIIIT");
+    return (
+      <div>
+        <List dense={dense}>
+          {laSplit.map((elem) => {
+            <ListItem>
+              <ListItemIcon>
+                <CheckIcon />
+              </ListItemIcon>
+              <ListItemText primary={elem} />
+            </ListItem>;
+          })}
+        </List>
+      </div>
+    );
+
+    /*   laSplit.map((elem) => {
+      console.log(elem, "ELEEEEEMMMM");
+    }); */
+  };
 
   /*   //Funcionalidad para el FORMCONTROL
   const [quantity, setQuantity] = useState(6);
@@ -189,8 +249,125 @@ const SingleProductView = ({ id }) => {
 
   return (
     <div>
-      <h1>HOOOLAA</h1>
-      {/*  <Paper className={classes.otherMargin} elevation={3}>
+      <Container>
+        <Grid
+          elevation={3}
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            marginTop: theme.spacing(5),
+            marginBottom: theme.spacing(5),
+            marginRight: theme.spacing(10),
+            marginLeft: theme.spacing(10),
+          }}
+        >
+          <Tab
+            label={property.type}
+            icon={<HouseIcon fontSize="large" style={{ color: "#004d40" }} />}
+            className={classes.tab}
+          />
+          <Tab
+            label={property.state}
+            icon={<VpnKeyIcon fontSize="large" style={{ color: "#004d40" }} />}
+            className={classes.tab}
+          />
+          <Tab
+            label={`$${property.price}`}
+            icon={
+              <LocalAtmIcon fontSize="large" style={{ color: "#004d40" }} />
+            }
+            className={classes.tab}
+          />
+        </Grid>
+        <Grid className={classes.pad} elevation={3}>
+          <Typography variant="h3">
+            <Box
+              fontWeight="fontWeightBold"
+              m={1}
+              style={{ color: "#00695c" }}
+            >{`${property.type} en ${property.location}`}</Box>
+          </Typography>
+        </Grid>
+        <Grid
+          className={classes.pad}
+          elevation={3}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Grid
+            item
+            xs={6}
+            style={{
+              justifyContent: "flex-end",
+              display: "flex",
+              marginRight: theme.spacing(2),
+              marginLeft: theme.spacing(2),
+            }}
+          >
+            <img src={property.img} alt={property.name} />
+          </Grid>
+
+          <Grid
+            item
+            xs={6}
+            style={{
+              justifyContent: "flex-start",
+
+              display: "flex",
+              marginRight: theme.spacing(2),
+              marginLeft: theme.spacing(2),
+            }}
+          >
+            <Typography variant="h4">
+              <Box
+                fontWeight="fontWeightBold"
+                m={1}
+                style={{ color: "#00695c" }}
+              >
+                DESCRIPCIÓN
+                <Typography
+                  style={{ color: "#616161", marginTop: theme.spacing(3) }}
+                >
+                  {property.description ? (
+                    <List style={{ marginTop: theme.spacing(3) }}>
+                      {`${property.description.split(".")}`}
+                    </List>
+                  ) : (
+                    ""
+                  )}
+
+                  {/* {(event) => {
+                    event.preventDefault();
+                    let des = property.description;
+                    console.log(des, ">>>>>>>>>>>LA DEEES");
+                    let laSplit = des.split(".");
+                    console.log(laSplit, ">>>>>>>>>>>SPLIIIIT");
+                    return (
+                      <div>
+                        <List dense={dense}>
+                          {laSplit.map((elem) => {
+                            <ListItem>
+                              <ListItemIcon>
+                                <CheckIcon />
+                              </ListItemIcon>
+                              <ListItemText primary={elem} />
+                            </ListItem>;
+                          })}
+                        </List>
+                      </div>
+                    );
+                  }} */}
+                </Typography>
+              </Box>
+            </Typography>
+
+            {/* <Typography>{property.description}</Typography> */}
+          </Grid>
+        </Grid>
+      </Container>
+      {/*  <Grid className={classes.otherMargin} elevation={3}>
         <Container>
           <Grid>
             <a href="javascript:history.back()">&lt; Volver atras</a>
@@ -312,7 +489,7 @@ const SingleProductView = ({ id }) => {
             </Grid>
           </Grid>
         </Container>
-      </Paper> */}
+      </Grid> */}
     </div>
   );
 };

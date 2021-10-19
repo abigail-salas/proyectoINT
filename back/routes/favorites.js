@@ -1,14 +1,13 @@
 const express = require("express");
 const favoritesRoute = express.Router();
-const Favorite = require("../models/FavoriteModel");
-// const Product = require("../models/ProductsModel");
-// const User = require("../models/UsersModel");
+const Product = require("../models/PropertyModel");
+const User = require("../models/UsersModel");
 
 require("../models/index");
 
 // mostrar todos los favs de un usuario
 favoritesRoute.get("/:id", async (req, res) => {
-  const user = await Favorite.findOne({
+  const user = await User.findOne({
     where: { id: req.params.id },
   });
   const products = await user.getProducts();
@@ -20,7 +19,7 @@ favoritesRoute.post("/:id", (req, res) => {
   // http://localhost:3001/api/favorites/11?productId=2   // 11 es id de usuario
   const { productId } = req.query;
 
-  Favorite.findOne({
+  Product.findOne({
     where: {
       id: productId,
     },
@@ -40,7 +39,7 @@ favoritesRoute.delete("/:id", (req, res) => {
   // http://localhost:3001/api/favorites/11?productId=2   // 11 es id de usuario
   const { productId } = req.query;
 
-  Favorite.findOne({
+  User.findOne({
     where: { id: req.params.id },
   })
     .then((user) => {
@@ -53,7 +52,7 @@ favoritesRoute.delete("/:id", (req, res) => {
 
 // eliminar todos los favs de un usuario
 favoritesRoute.delete("/all/:id", (req, res) => {
-  Favorite.findOne({
+  User.findOne({
     where: { id: req.params.id },
   })
     .then((user) => {

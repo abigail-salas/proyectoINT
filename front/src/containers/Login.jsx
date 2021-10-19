@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Link from "@material-ui/core/Link";
 
 import Alert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -13,8 +14,16 @@ import { Link as RouterLink, useHistory } from "react-router-dom";
 import { useInput } from "../hooks/useInput";
 import { UserContext } from "../index";
 
+const useStyles = makeStyles((theme) => ({
+  color: {
+    color: theme.palette.getContrastText("#00695c"),
+    backgroundColor: "#00695c",
+  },
+}));
+
 export default function Login() {
   const theme = useTheme();
+  const classes = useStyles();
 
   const { setUser } = useContext(UserContext);
   const history = useHistory();
@@ -109,14 +118,23 @@ export default function Login() {
             </Grid>
 
             <Grid item xs={12}>
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                className={classes.color}
+              >
                 Entrá a tu cuenta
               </Button>
 
               <Grid item>
-                <RouterLink to="/register">
+                <Link
+                  component={RouterLink}
+                  to="/register"
+                  href="#"
+                  variant="body2"
+                >
                   Todavía no tienes cuenta ?
-                </RouterLink>
+                </Link>
               </Grid>
             </Grid>
           </Grid>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { addFavorite } from "../store/favorite";
 
 import { grey, purple } from "@material-ui/core/colors";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -51,18 +52,69 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Products() {
   const classes = useStyles();
-  const property = useSelector((state) => state.property);
-  console.log(property, "-----PROPERIIIES");
-  // const user = useSelector((state) => state.user);
+  const property = useSelector((state) => {
+    console.log(">>>>>>>>>>>>", typeof state.property, state.property);
+    return state.property;
+  });
+
   const dispatch = useDispatch();
   const history = useHistory();
   const theme = useTheme();
+
+  const user = useSelector((state) => state.user);
+
   const [state, setState] = useState({ open: false });
   const [messageInfo, setMessageInfo] = useState(undefined);
+
+  React.useEffect(() => {
+    setState({ open: true });
+  }, [messageInfo]);
+
+  const handleClose = () => {
+    setState({ open: false });
+    setMessageInfo("");
+    return;
+  };
+
+  /*   //Alert a carrito
+  const [carrito, setCarrito] = useState(false);
+  const handleOpenCarrito = () => {
+    setCarrito(true);
+  };
+  const handleCloseCarrito = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setCarrito(false);
+  }; */
+
+  //Alert a favs
+  const [favs, setFavs] = useState(false);
+  const handleOpenFavs = () => {
+    setFavs(true);
+  };
+  const handleCloseFavs = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setFavs(false);
+  };
+  ////
+
+  /*   const handleClick = (product) => {
+    dispatch(addToLocalCart(product));
+    handleOpenCarrito();
+  }; */
+
+  const addFav = (productId) => {
+    dispatch(addFavorite({ userId: user.id, productId: productId }));
+    handleOpenFavs();
+  };
 
   useEffect(() => {
     dispatch(getAllProperties());
   }, []);
+
   return (
     <Grid
       container
@@ -70,57 +122,77 @@ export default function Products() {
       className={classes.mainGrid}
       style={{ marginLeft: theme.spacing(15) }}
     >
+      {messageInfo ? (
+        <Snackbar
+          open={state.open}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          className={classes.snackbar}
+        >
+          <Alert severity="error" onClose={handleClose}>
+            <div
+              style={{
+                display: "flex",
+                flexFlow: "column",
+                alignItems: "center",
+              }}
+            >
+              {messageInfo}
+            </div>
+          </Alert>
+        </Snackbar>
+      ) : null}
       <Grid item xs={12} md={10}>
         <Container className={classes.cardGrid}>
           <Grid container spacing={4}>
-            {property.map((property) => (
-              <Grid item key={property.id} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardActionArea
-                    //href={`/property/${property.id}`}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      history.push(`/property/${property.id}`);
-                    }}
-                  >
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={property.img}
-                      title="Image title"
-                    />
+            {Array.isArray(property) &&
+              property.map((property) => (
+                <Grid item key={property.id} xs={12} sm={6} md={4}>
+                  <Card className={classes.card}>
+                    <CardActionArea
+                      //href={`/property/${property.id}`}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        history.push(`/property/${property.id}`);
+                      }}
+                    >
+                      <CardMedia
+                        className={classes.cardMedia}
+                        image={property.img}
+                        title="Image title"
+                      />
 
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {`${property.type} en ${property.location}`}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {property.description}
-                      </Typography>
-                      <Typography>{`$${property.price}`}</Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <IconButton>
-                      <FavoriteIcon /* onClick={() => addFav(property.id)} */ />
+                      <CardContent className={classes.cardContent}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {`${property.type} en ${property.location} (${property.state})`}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {property.description.substring(0, 20) + "..."}
+                        </Typography>
+                        <Typography>{`$${property.price}`}</Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <IconButton>
+                        <FavoriteIcon onClick={() => addFav(property.id)} />
 
-                      {/*  <Snackbar
-                            open={favs}
-                            autoHideDuration={1500}
-                            onClose={handleCloseFavs}
-                          >
-                            <Alert severity="success" color="info">
-                              Se agregó a Favoritos!
-                            </Alert>
-                          </Snackbar> */}
-                    </IconButton>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                        <Snackbar
+                          open={favs}
+                          autoHideDuration={1500}
+                          onClose={handleCloseFavs}
+                        >
+                          <Alert severity="success" color="info">
+                            Se agregó a Favoritos!
+                          </Alert>
+                        </Snackbar>
+                      </IconButton>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
           </Grid>
         </Container>
       </Grid>

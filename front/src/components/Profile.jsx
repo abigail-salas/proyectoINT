@@ -1,9 +1,64 @@
 // import React from "react";
+// import { makeStyles } from "@material-ui/core/styles";
+// import BottomNavigation from "@material-ui/core/BottomNavigation";
+// import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+// import RestoreIcon from "@material-ui/icons/Restore";
+// import FavoriteIcon from "@material-ui/icons/Favorite";
+// import LocationOnIcon from "@material-ui/icons/LocationOn";
+// import {
+//   Card,
+//   CardActionArea,
+//   CardContent,
+//   CardMedia,
+//   Hidden,
+//   Container,
+// } from "@material-ui/core";
 
-// export default function Profile() {
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     width: 500,
+//   },
+//   /*   root: {
+//     flexGrow: 1,
+//     width: "100%",
+//     paddingTop: 64,
+//     backgroundColor: theme.palette.background.paper,
+//   }, */
+//   container: {
+//     marginTop: theme.spacing(10),
+//     marginBottom: theme.spacing(10),
+//     backgroundColor: "#fff",
+//     width: "100%",
+//     border: 2,
+//     display: "flex",
+//     justifyContent: "center",
+//     color: theme.palette.getContrastText("#00695c"),
+//     // backgroundColor: "#00695c",
+//   },
+// }));
+
+// export default function SimpleBottomNavigation() {
+//   const classes = useStyles();
+//   const [value, setValue] = React.useState(0);
+
 //   return (
 //     <div>
-//       <h1>SOY LA INFO DEL USUARIO</h1>
+//       <Container className={classes.container}>
+//         <BottomNavigation
+//           value={value}
+//           onChange={(event, newValue) => {
+//             setValue(newValue);
+//           }}
+//           showLabels
+//           position="static"
+//           color="#00695c"
+//           className={classes.root}
+//         >
+//           <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+//           <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+//           <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+//         </BottomNavigation>
+//       </Container>
 //     </div>
 //   );
 // }
@@ -19,7 +74,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import { AppBar, Tabs, Tab, Typography, Box } from "@material-ui/core";
 import { PersonPin, Help, ShoppingBasket } from "@material-ui/icons";
-//import { getUserFavorites } from "../store/favorites";
+import { getUserFavorites } from "../store/favorite";
 import Favorites from "./Favorites";
 import ProfileUserInfo from "./ProfileUserInfo";
 //import UserOrders from "./UserOrders";
@@ -94,10 +149,10 @@ export default function Profile() {
     setValue(newValue);
   };
 
-  /*   React.useEffect(() => {
+  React.useEffect(() => {
     console.log(user.id);
     dispatch(getUserFavorites(user.id));
-  }, [user.id]); */
+  }, [user.id]);
 
   return (
     <div className={classes.root}>
@@ -121,7 +176,7 @@ export default function Profile() {
           <Favorites />
         </TabPanel>
 
-        {/* <TabPanel value={value} index={1}>
+        {/*  <TabPanel value={value} index={1}>
           <UserOrders />
         </TabPanel> */}
         <TabPanel value={value} index={2}>

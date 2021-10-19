@@ -17,7 +17,7 @@ ReactDOM.render(
   document.getElementById("root")
 );*/
 
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -29,6 +29,8 @@ export const UserContext = createContext();
 
 const Root = () => {
   const [user, setUser] = useState({});
+
+  // useEffect(() => {}, []);
 
   return (
     <Router>

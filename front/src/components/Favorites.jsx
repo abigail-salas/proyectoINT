@@ -1,7 +1,7 @@
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-//import { removeFavorite, removeAllFavorites } from "../store/favorites";
+import { removeFavorite, removeAllFavorites } from "../store/favorite";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -46,13 +46,13 @@ const Favorites = () => {
 
   const handleChange = () => {};
 
-  /*   const handleDelete = (productId) => {
+  const handleDelete = (productId) => {
     dispatch(removeFavorite({ userId: user.id, productId: productId }));
-  }; */
+  };
 
-  /*   const handleDeleteAll = () => {
+  const handleDeleteAll = () => {
     dispatch(removeAllFavorites(user.id));
-  }; */
+  };
 
   return (
     <>
@@ -85,27 +85,27 @@ const Favorites = () => {
                 </TableCell>
 
                 <TableCell align="right">{`$${product.price}`}</TableCell>
-                {/*  <TableCell align="right">
+                <TableCell align="right">
                   <Chip
                     label="Borrar"
                     onDelete={() => handleDelete(product.id)}
                     color="secondary"
                     variant="outlined"
                   />
-                </TableCell> */}
+                </TableCell>
               </TableRow>
             </>
           ))}
           {favorites.length > 0 ? (
             <TableRow>
-              {/* <TableCell align="center" colSpan={12}>
+              <TableCell align="center" colSpan={12}>
                 <Chip
                   label="Borrar todos"
                   onDelete={() => handleDeleteAll(user.id)}
                   color="primary"
                   variant="outlined"
                 />
-              </TableCell> */}
+              </TableCell>
             </TableRow>
           ) : null}
         </TableBody>

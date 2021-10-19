@@ -1,12 +1,17 @@
 import { createReducer, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getAllProperties = createAsyncThunk("GETALLPRROPERTIES", () => {
-  return axios.get("/api/properties").then((res) => {
-    console.log(res, "-----RES EN EL REDUUUUX");
-    return res.data;
-  });
-});
+export const getAllProperties = createAsyncThunk(
+  "GETALLPROPERTIES",
+  async () => {
+    try {
+      const { data } = await axios.get("/api/properties");
+      return data;
+    } catch (error) {
+      return [];
+    }
+  }
+);
 
 export const getPropertyByType = createAsyncThunk(
   "GETPROPERTYBYTYPE",
@@ -18,7 +23,7 @@ export const getPropertyByType = createAsyncThunk(
 export const getSelectedProperty = createAsyncThunk(
   "GETSELECTEDPROPERTY",
   (id) => {
-    return axios.get(`/api/preperties/id/${id}`).then((res) => res.data);
+    return axios.get(`/api/properties/id/${id}`).then((res) => res.data);
   }
 );
 

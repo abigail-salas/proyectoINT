@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
-import ranceada from "./ranceada";
+import Ranceada from "../prueba/maps";
 import Register from "./Register";
 import Login from "./Login";
 import Navbar from "../components/Navbar";
@@ -17,6 +17,9 @@ import Departamentos from "../components/Departamentos";
 import Terrenos from "../components/Terrenos";
 import SingleProductView from "../components/SingleProduct";
 import axios from "axios";
+
+import credential from "../prueba/credential";
+const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${credential.mapsKey}`;
 
 function App() {
   useEffect(() => {
@@ -70,7 +73,14 @@ function App() {
               render={({ match }) => <SingleProductView id={match.params.id} />}
             />
 
-            <Route exact path="/ran" component={ranceada} />
+            <Route exact path="/ran">
+              <Ranceada
+                containerElement={<div style={{ height: "400px" }} />}
+                mapElement={<div style={{ height: "100%" }} />}
+                googleMapURL={mapURL}
+                loadingElement={<div style={{ height: "100%" }} />}
+              />
+            </Route>
             <Redirect from="/" to="/home" />
           </Switch>
         </ThemeProvider>

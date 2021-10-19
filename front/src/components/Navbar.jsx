@@ -1,7 +1,12 @@
-import React, { useContext } from "react";
-//import { useSelector, useDispatch } from "react-redux";
+import React, { useContext, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 //const user = useSelector((state) => state.user);
 import { grey, purple } from "@material-ui/core/colors";
+import {
+  getPropertyByType,
+  getAllProperties,
+  getPropertyByState,
+} from "../store/property";
 
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import {
@@ -15,6 +20,9 @@ import {
   Menu,
   Chip,
   Button,
+  Divider,
+  Grid,
+  Paper,
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -100,12 +108,24 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.getContrastText("#00695c"),
     backgroundColor: "#00695c",
   },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
+  iconButton: {
+    padding: 6,
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
 }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const dispatch = useDispatch();
 
   const [nav, setNav] = React.useState(null);
   const open = Boolean(nav);
@@ -117,6 +137,7 @@ export default function PrimarySearchAppBar() {
   };
 
   const { user, setUser } = useContext(UserContext);
+
   const history = useHistory();
   const handleLogout = () => {
     axios
@@ -131,6 +152,25 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [value, setValue] = useState("");
+  const [otherValue, setOtherValue] = useState("");
+
+  const handleChange = (event) => {
+    const input = event.target.value;
+    setValue(input);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value.length > 0) {
+      dispatch(getPropertyByType(value));
+    } else if (value.length > 0) {
+      dispatch(getPropertyByState(value));
+    } else {
+      console.log(value);
+      dispatch(getAllProperties());
+    }
+  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -195,9 +235,10 @@ export default function PrimarySearchAppBar() {
 
     console.info("cambio a register");
   };
+  const token = localStorage.getItem("token");
 
   const menuId = "primary-search-account-menu";
-  const renderMenu = () => {
+  const RenderMenu = () => {
     return user.id ? (
       <Menu
         anchorEl={anchorEl}
@@ -252,7 +293,6 @@ export default function PrimarySearchAppBar() {
             <MenuItem onClick={handleCompras}>Comprar</MenuItem>
             <MenuItem onClick={handleRentals}>Alquilar</MenuItem>
             <MenuItem onClick={handleSales}>Vender</MenuItem>
-            <MenuItem onClick={handleClose}>Contacto</MenuItem>
           </Menu>
 
           <Button
@@ -266,41 +306,53 @@ export default function PrimarySearchAppBar() {
             </Typography>
           </Button>
 
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
+          <Grid
+            className={classes.search}
+            component="form"
+            onSubmit={handleSubmit}
+          >
+            <IconButton
+              type="submit"
+              className={classes.iconButton}
+              aria-label="search"
+            >
               <SearchIcon />
-            </div>
+            </IconButton>
+
+            {/* <Paper
+              component="form"
+              className={classes.search}
+              onSubmit={handleSubmit}
+            >
+              <InputBase
+                className={classes.input}
+                placeholder="Search..."
+                inputProps={{ "aria-label": "search" }}
+                value={value}
+                onChange={handleChange}
+              />
+              <Divider className={classes.divider} orientation="vertical" />
+              <IconButton
+                type="submit"
+                className={classes.iconButton}
+                aria-label="search"
+              >
+                <SearchIcon />
+              </IconButton>
+            </Paper> */}
             <InputBase
               placeholder="Search…"
-              classes={{
+              value={value}
+              onChange={handleChange}
+              /*  classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
-              }}
+              }} */
               inputProps={{ "aria-label": "search" }}
             />
-          </div>
+          </Grid>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            {/* <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={20} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
-            {/* <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton> */}
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -330,8 +382,8 @@ export default function PrimarySearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-
-      {renderMenu()}
+      <RenderMenu />
+      {/* {RenderMenu()} */}
     </div>
   );
 }
